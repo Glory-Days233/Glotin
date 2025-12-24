@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Yorkson & Ernestina | December 27, 2025</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- SPLASH / COVER SCREEN -->
+<div class="splash" id="splash">
+  <div class="splash-overlay">
+    <h1>Yorkson & Ernestina</h1>
+    <p class="splash-date">December 27, 2025</p>
+    <p class="tap-prompt">Tap to Open Invitation</p>
+  </div>
+</div>
+
+<!-- MAIN CONTENT (hidden until splash is clicked) -->
+<div class="main-content" id="main-content">
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">Yorkson & Ernestina</div>
+    <div class="nav-links">
+      <a href="#program">Ceremony</a>
+      <a href="#reception">Reception</a>
+      <a href="#gallery">Gallery</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-overlay">
+      <h1>Yorkson <span>&</span> Ernestina</h1>
+      <p class="date">December 27, 2025 • 10:00 AM</p>
+      <p class="venue">Power in the Blood of Jesus Ministries</p>
+      <p class="tagline">We joyfully invite you to celebrate our union</p>
+    </div>
+  </header>
+
+  <!-- COUNTDOWN -->
+  <section class="countdown">
+    <div class="countdown-item"><span id="days">00</span><small>Days</small></div>
+    <div class="countdown-item"><span id="hours">00</span><small>Hours</small></div>
+    <div class="countdown-item"><span id="minutes">00</span><small>Minutes</small></div>
+    <div class="countdown-item"><span id="seconds">00</span><small>Seconds</small></div>
+  </section>
+
+  <!-- CEREMONY -->
+  <section id="program" class="card">
+    <h2>Wedding Ceremony</h2>
+    <div class="program-list">
+      <div class="item">Arrival of Families & Guests <span>Musical Interlude</span></div>
+      <div class="item">Opening Prayer <span>Sydney Odumanye</span></div>
+      <div class="item">Bridal Procession <span>Stephen Andoh</span></div>
+      <div class="item">Praises & Worship <span>Choir</span></div>
+      <div class="item">First Offering <span>Choir</span></div>
+      <div class="item">Song Ministration <span>Stephen Andoh</span></div>
+      <div class="item">Marriage Vows <span>Rev. Nii Armah-Armah</span></div>
+      <div class="item">Song Ministration <span>Solo Jnr</span></div>
+      <div class="item">Sermon <span>Rev. Benjamin Adjei</span></div>
+      <div class="item">Signing of Marriage Certificate</div>
+      <div class="item">Offering for Couples <span>Choir</span></div>
+      <div class="item">Closing Prayer <span>Apostle Sena Akorli</span></div>
+    </div>
+    <p class="mc">MC: Apostle Sena Akorli</p>
+  </section>
+
+  <!-- RECEPTION -->
+  <section id="reception" class="card">
+    <h2>Wedding Reception</h2>
+    <div class="program-list">
+      <div class="item">Seating of Guests <span>Musical Interlude</span></div>
+      <div class="item">Introduction of Couple</div>
+      <div class="item">Opening Prayer <span>Rev. Calvary Atamudzi</span></div>
+      <div class="item">Introduction of Chairperson</div>
+      <div class="item">Chairperson’s Response</div>
+      <div class="item">Cutting of Cake</div>
+      <div class="item">Popping of Champagne</div>
+      <div class="item">Proposal of Toast <span>Dr. Emmanuel Kwawukumey</span></div>
+      <div class="item">Serving of Buffet</div>
+      <div class="item">Vote of Thanks <span>Stephen Andoh</span></div>
+      <div class="item">Closing Prayer <span>Rev. Divine Akorli</span></div>
+    </div>
+    <p class="mc">MC: Nicholas Cofie</p>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="gallery">
+    <h2>Our Moments</h2>
+
+    <div class="marquee-container">
+      <div class="marquee-track">
+        <!-- Full set of images -->
+        <img src="images/Again.jpeg" alt="Yorkson and Ernestina sharing a joyful moment">
+        <img src="images/Ski.jpeg" alt="Yorkson and Ernestina adventurous together">
+        <img src="images/camo.jpeg" alt="Yorkson and Ernestina in camouflage style">
+        <img src="images/Sakpase.jpeg" alt="Yorkson and Ernestina dancing and celebrating">
+        <img src="images/Endless.jpeg" alt="Yorkson and Ernestina endless love">
+        <img src="images/pre1.jpg" alt="Pre-wedding portrait">
+        <img src="images/pre2.jpg" alt="Pre-wedding embrace">
+        <img src="images/wed1.jpg" alt="Wedding day bliss">
+        <img src="images/wed2.jpg" alt="Wedding day happiness">
+
+        <!-- Duplicated set -->
+        <img src="images/Again.jpeg" alt="Yorkson and Ernestina sharing a joyful moment">
+        <img src="images/Ski.jpeg" alt="Yorkson and Ernestina adventurous together">
+        <img src="images/camo.jpeg" alt="Yorkson and Ernestina in camouflage style">
+        <img src="images/Sakpase.jpeg" alt="Yorkson and Ernestina dancing and celebrating">
+        <img src="images/Endless.jpeg" alt="Yorkson and Ernestina endless love">
+        <img src="images/pre1.jpg" alt="Pre-wedding portrait">
+        <img src="images/pre2.jpg" alt="Pre-wedding embrace">
+        <img src="images/wed1.jpg" alt="Wedding day bliss">
+        <img src="images/wed2.jpg" alt="Wedding day happiness">
+      </div>
+    </div>
+
+    <p class="gallery-note">Hover to pause • Endless memories</p>
+  </section>
+
+  <!-- MUSIC -->
+  <audio id="bg-music" loop>
+    <source src="music/Brian McKnight - Marry Your Daughter - www.mp3" type="audio/mp3">
+  </audio>
+  <button id="music-btn">Play Music</button>
+
+</div> <!-- End of main-content -->
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,418 @@
+/* ===============================
+   GLOBAL RESET & BASE
+================================ */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #fdfaf7;
+  color: #3a2f2b;
+  overflow-x: hidden;
+}
+
+h1, h2 { font-family: 'Playfair Display', serif; }
+
+a { text-decoration: none; }
+
+/* ===============================
+   NAVIGATION
+================================ */
+nav {
+  position: fixed;
+  top: 0; width: 100%;
+  padding: 20px 40px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 20;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: #b89b72;
+  font-weight: 700;
+}
+
+nav a {
+  margin-left: 30px;
+  color: #3a2f2b;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover { color: #b89b72; }
+
+/* ===============================
+   HERO SECTION
+================================ */
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(253,250,247,0.92), rgba(253,250,247,0.92)),
+              url("images/hero.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    url("images/WhatsApp Image 2025-12-21 at 11.54.37 AM.jpeg") left bottom / 400px no-repeat,
+    url("images/WhatsApp Image 2025-12-21 at 11.56.55 AM.jpeg") right top / 400px no-repeat,
+    url("images/backdrop.png") center bottom / 700px no-repeat;
+  opacity: 0.12;
+  pointer-events: none;
+  animation: floatDecor 20s ease-in-out infinite alternate;
+}
+
+@keyframes floatDecor {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-25px); }
+}
+
+.hero-overlay {
+  text-align: center;
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(16px);
+  padding: 90px 100px;
+  border-radius: 32px;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.12);
+}
+
+.hero h1 {
+  font-size: 4.8rem;
+  color: #3a2f2b;
+  letter-spacing: 3px;
+}
+
+.hero span {
+  font-family: 'Playfair Display', serif;
+  color: #b89b72;
+  font-size: 5.5rem;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin: 12px 0;
+  font-weight: 500;
+}
+
+.tagline {
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #6b5b52;
+  margin-top: 20px;
+}
+
+/* ===============================
+   COUNTDOWN
+================================ */
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 70px 20px;
+  background: #3a2f2b;
+  color: #fff;
+}
+
+.countdown-item {
+  text-align: center;
+}
+
+.countdown span {
+  display: block;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #b89b72;
+  border-bottom: 3px solid #b89b72;
+  padding-bottom: 10px;
+}
+
+.countdown small {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 8px;
+  display: block;
+}
+
+/* ===============================
+   CARDS
+================================ */
+.card {
+  max-width: 960px;
+  margin: 120px auto;
+  padding: 60px;
+  border-radius: 32px;
+  background: linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)),
+              url("images/oceaN.jpg") center/cover no-repeat;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 40px 90px rgba(0,0,0,0.12);
+}
+
+.card h2 {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 50px;
+  color: #3a2f2b;
+  position: relative;
+}
+
+.card h2::after {
+  content: "";
+  width: 80px;
+  height: 2px;
+  background: #b89b72;
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.item {
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(58,47,43,0.15);
+  font-size: 1.15rem;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.item span {
+  display: block;
+  margin-top: 8px;
+  font-size: 1rem;
+  color: #6b5b52;
+  font-weight: 400;
+}
+
+.item.show { opacity: 1; transform: translateY(0); }
+
+.item:hover {
+  background: rgba(255,255,255,0.6);
+  padding-left: 15px;
+  border-radius: 12px;
+}
+
+.mc {
+  text-align: center;
+  margin-top: 40px;
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #b89b72;
+}
+
+/* ===============================
+   GALLERY - INFINITE MARQUEE
+================================ */
+.gallery {
+  padding: 120px 40px;
+  text-align: center;
+  position: relative;
+  background: #fdfaf7;
+}
+
+.gallery h2 {
+  font-size: 2.8rem;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.gallery h2::after {
+  content: "";
+  width: 80px;
+  height: 2px;
+  background: #b89b72;
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.marquee-container {
+  overflow: hidden;
+  padding: 40px 0;
+  position: relative;
+}
+
+.marquee-container::before,
+.marquee-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 150px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marquee-container::before {
+  left: 0;
+  background: linear-gradient(to right, #fdfaf7, transparent);
+}
+
+.marquee-container::after {
+  right: 0;
+  background: linear-gradient(to left, #fdfaf7, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 45s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.marquee-track img {
+  height: 420px;
+  width: auto;
+  object-fit: cover;
+  margin: 0 20px;
+  border-radius: 24px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  flex-shrink: 0;
+}
+
+.marquee-track img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+  z-index: 3;
+}
+
+@keyframes marqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.gallery-note {
+  margin-top: 30px;
+  font-style: italic;
+  color: #6b5b52;
+  font-size: 1.1rem;
+}
+
+/* ===============================
+   MUSIC BUTTON
+================================ */
+#music-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #b89b72;
+  color: #fff;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(184,155,114,0.3);
+  transition: all 0.3s;
+  z-index: 10;
+}
+
+#music-btn:hover { transform: scale(1.05); }
+
+/* ===============================
+   MOBILE RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  nav { padding: 16px 20px; }
+  .logo { font-size: 1.5rem; }
+  nav a { margin-left: 15px; font-size: 0.95rem; }
+
+  .hero-overlay { padding: 60px 40px; }
+  .hero h1 { font-size: 3.2rem; }
+  .hero span { font-size: 3.8rem; }
+
+  .countdown { gap: 20px; padding: 50px 20px; flex-wrap: wrap; }
+  .countdown span { font-size: 2.8rem; }
+
+  .card { margin: 80px 20px; padding: 40px; }
+
+  .gallery { padding: 80px 20px; }
+
+  .marquee-track img {
+    height: 280px;
+    margin: 0 12px;
+  }
+
+  .marquee-container::before,
+  .marquee-container::after {
+    width: 80px;
+  }
+
+  #music-btn {
+    padding: 14px 24px;
+    font-size: 0.95rem;
+  }
+}
+
+/* ===============================
+   SPLASH / COVER SCREEN
+================================ */
+.splash {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: url("./images/splash.jpeg") center/cover no-repeat; /* CHANGE TO YOUR IMAGE NAME */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  cursor: pointer;
+  transition: opacity 1.2s ease, visibility 1.2s ease;
+}
+
+.splash-overlay {
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.7);
+  padding: 40px;
+}
+
+.splash h1 {
+  font-size: 4rem;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 20px;
+}
+
+.splash-date {
+  font-size: 1.6rem;
+  margin-bottom: 40px;
+  font-weight: 500;
+}
+
+.tap-prompt {
+  font-size: 1.4rem;
+  font-style: italic;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.8; }
+  50% { opacity: 1; }
+  100% { opacity: 0.8; }
+}
+
+/* Hide main content until splash is dismissed */
+.main-content {
+  display: none;
+}
+
+/* Mobile touch feedback */
+@media (max-width: 768px) {
+  .splash h1 { font-size: 3rem; }
+  .splash-date { font-size: 1.4rem; }
+  .tap-prompt { font-size: 1.3rem; }
+}
