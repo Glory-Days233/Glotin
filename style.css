@@ -1,6 +1,4 @@
-/* ===============================
-   GLOBAL RESET & BASE
-================================ */
+/* GLOBAL RESET & BASE */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
@@ -14,9 +12,7 @@ h1, h2 { font-family: 'Playfair Display', serif; }
 
 a { text-decoration: none; }
 
-/* ===============================
-   NAVIGATION
-================================ */
+/* NAVIGATION */
 nav {
   position: fixed;
   top: 0; width: 100%;
@@ -46,9 +42,7 @@ nav a {
 
 nav a:hover { color: #b89b72; }
 
-/* ===============================
-   HERO SECTION
-================================ */
+/* HERO SECTION */
 .hero {
   height: 100vh;
   background: linear-gradient(rgba(253,250,247,0.92), rgba(253,250,247,0.92)),
@@ -86,34 +80,12 @@ nav a:hover { color: #b89b72; }
   box-shadow: 0 40px 80px rgba(0,0,0,0.12);
 }
 
-.hero h1 {
-  font-size: 4.8rem;
-  color: #3a2f2b;
-  letter-spacing: 3px;
-}
+.hero h1 { font-size: 4.8rem; color: #3a2f2b; letter-spacing: 3px; }
+.hero span { font-family: 'Playfair Display', serif; color: #b89b72; font-size: 5.5rem; }
+.hero p { font-size: 1.3rem; margin: 12px 0; font-weight: 500; }
+.tagline { font-style: italic; font-size: 1.1rem; color: #6b5b52; margin-top: 20px; }
 
-.hero span {
-  font-family: 'Playfair Display', serif;
-  color: #b89b72;
-  font-size: 5.5rem;
-}
-
-.hero p {
-  font-size: 1.3rem;
-  margin: 12px 0;
-  font-weight: 500;
-}
-
-.tagline {
-  font-style: italic;
-  font-size: 1.1rem;
-  color: #6b5b52;
-  margin-top: 20px;
-}
-
-/* ===============================
-   COUNTDOWN
-================================ */
+/* COUNTDOWN */
 .countdown {
   display: flex;
   justify-content: center;
@@ -123,29 +95,11 @@ nav a:hover { color: #b89b72; }
   color: #fff;
 }
 
-.countdown-item {
-  text-align: center;
-}
+.countdown-item { text-align: center; }
+.countdown span { display: block; font-size: 3.5rem; font-weight: 700; color: #b89b72; border-bottom: 3px solid #b89b72; padding-bottom: 10px; }
+.countdown small { font-size: 1rem; font-weight: 500; margin-top: 8px; display: block; }
 
-.countdown span {
-  display: block;
-  font-size: 3.5rem;
-  font-weight: 700;
-  color: #b89b72;
-  border-bottom: 3px solid #b89b72;
-  padding-bottom: 10px;
-}
-
-.countdown small {
-  font-size: 1rem;
-  font-weight: 500;
-  margin-top: 8px;
-  display: block;
-}
-
-/* ===============================
-   CARDS
-================================ */
+/* CARDS */
 .card {
   max-width: 960px;
   margin: 120px auto;
@@ -186,21 +140,9 @@ nav a:hover { color: #b89b72; }
   transition: all 0.8s ease;
 }
 
-.item span {
-  display: block;
-  margin-top: 8px;
-  font-size: 1rem;
-  color: #6b5b52;
-  font-weight: 400;
-}
-
+.item span { display: block; margin-top: 8px; font-size: 1rem; color: #6b5b52; font-weight: 400; }
 .item.show { opacity: 1; transform: translateY(0); }
-
-.item:hover {
-  background: rgba(255,255,255,0.6);
-  padding-left: 15px;
-  border-radius: 12px;
-}
+.item:hover { background: rgba(255,255,255,0.6); padding-left: 15px; border-radius: 12px; }
 
 .mc {
   text-align: center;
@@ -210,9 +152,7 @@ nav a:hover { color: #b89b72; }
   color: #b89b72;
 }
 
-/* ===============================
-   GALLERY - INFINITE MARQUEE
-================================ */
+/* GALLERY - INFINITE MARQUEE */
 .gallery {
   padding: 120px 40px;
   text-align: center;
@@ -220,31 +160,11 @@ nav a:hover { color: #b89b72; }
   background: #fdfaf7;
 }
 
-.gallery h2 {
-  font-size: 2.8rem;
-  margin-bottom: 60px;
-  position: relative;
-}
+.gallery h2 { font-size: 2.8rem; margin-bottom: 60px; position: relative; }
+.gallery h2::after { content: ""; width: 80px; height: 2px; background: #b89b72; position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); }
 
-.gallery h2::after {
-  content: "";
-  width: 80px;
-  height: 2px;
-  background: #b89b72;
-  position: absolute;
-  bottom: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.marquee-container {
-  overflow: hidden;
-  padding: 40px 0;
-  position: relative;
-}
-
-.marquee-container::before,
-.marquee-container::after {
+.marquee-container { overflow: hidden; padding: 40px 0; position: relative; }
+.marquee-container::before, .marquee-container::after {
   content: "";
   position: absolute;
   top: 0;
@@ -253,16 +173,8 @@ nav a:hover { color: #b89b72; }
   z-index: 2;
   pointer-events: none;
 }
-
-.marquee-container::before {
-  left: 0;
-  background: linear-gradient(to right, #fdfaf7, transparent);
-}
-
-.marquee-container::after {
-  right: 0;
-  background: linear-gradient(to left, #fdfaf7, transparent);
-}
+.marquee-container::before { left: 0; background: linear-gradient(to right, #fdfaf7, transparent); }
+.marquee-container::after { right: 0; background: linear-gradient(to left, #fdfaf7, transparent); }
 
 .marquee-track {
   display: flex;
@@ -270,9 +182,7 @@ nav a:hover { color: #b89b72; }
   animation: marqueeScroll 45s linear infinite;
 }
 
-.marquee-track:hover {
-  animation-play-state: paused;
-}
+.marquee-track:hover { animation-play-state: paused; }
 
 .marquee-track img {
   height: 420px;
@@ -303,9 +213,128 @@ nav a:hover { color: #b89b72; }
   font-size: 1.1rem;
 }
 
-/* ===============================
-   MUSIC BUTTON
-================================ */
+/* CHAMPAGNE POPPING */
+.champagne-intro {
+  text-align: center;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #6b5b52;
+  margin: 20px 0 40px;
+}
+
+.champagne-list {
+  max-width: 700px;
+  margin: 0 auto;
+  counter-reset: champagne-counter;
+  list-style: none;
+  padding: 0;
+}
+
+.champagne-list li {
+  position: relative;
+  padding: 18px 0 18px 60px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(58,47,43,0.15);
+}
+
+.champagne-list li::before {
+  content: counter(champagne-counter);
+  counter-increment: champagne-counter;
+  position: absolute;
+  left: 0;
+  top: 14px;
+  width: 36px;
+  height: 36px;
+  background: #b89b72;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.champagne-list li span {
+  display: block;
+  margin-top: 6px;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #6b5b52;
+  font-style: italic;
+}
+
+.champagne-list li:last-child { border-bottom: none; }
+
+.champagne-note {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #b89b72;
+}
+
+/* WEDDING PROGRAM */
+.program-intro {
+  text-align: center;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #6b5b52;
+  margin: 20px 0 50px;
+}
+
+.program-pages {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.program-page {
+  width: 100%;
+  max-width: 900px;
+  border-radius: 28px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.18);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border: 1px solid rgba(184,155,114,0.2);
+}
+
+.program-page:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 35px 80px rgba(0,0,0,0.25);
+}
+
+.program-actions { text-align: center; margin: 50px 0 30px; }
+
+.download-btn {
+  background: #b89b72;
+  color: #fff;
+  padding: 18px 40px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.2rem;
+  box-shadow: 0 12px 35px rgba(184,155,114,0.35);
+  transition: all 0.3s;
+  display: inline-block;
+}
+
+.download-btn:hover {
+  transform: scale(1.06);
+  background: #a88962;
+}
+
+.program-note {
+  text-align: center;
+  font-size: 1.35rem;
+  font-style: italic;
+  color: #b89b72;
+  margin-top: 20px;
+}
+
+/* MUSIC BUTTON */
 #music-btn {
   position: fixed;
   bottom: 30px;
@@ -324,48 +353,11 @@ nav a:hover { color: #b89b72; }
 
 #music-btn:hover { transform: scale(1.05); }
 
-/* ===============================
-   MOBILE RESPONSIVE
-================================ */
-@media (max-width: 768px) {
-  nav { padding: 16px 20px; }
-  .logo { font-size: 1.5rem; }
-  nav a { margin-left: 15px; font-size: 0.95rem; }
-
-  .hero-overlay { padding: 60px 40px; }
-  .hero h1 { font-size: 3.2rem; }
-  .hero span { font-size: 3.8rem; }
-
-  .countdown { gap: 20px; padding: 50px 20px; flex-wrap: wrap; }
-  .countdown span { font-size: 2.8rem; }
-
-  .card { margin: 80px 20px; padding: 40px; }
-
-  .gallery { padding: 80px 20px; }
-
-  .marquee-track img {
-    height: 280px;
-    margin: 0 12px;
-  }
-
-  .marquee-container::before,
-  .marquee-container::after {
-    width: 80px;
-  }
-
-  #music-btn {
-    padding: 14px 24px;
-    font-size: 0.95rem;
-  }
-}
-
-/* ===============================
-   SPLASH / COVER SCREEN
-================================ */
+/* SPLASH SCREEN */
 .splash {
   position: fixed;
   top: 0; left: 0; width: 100%; height: 100%;
-  background: url("./images/splash.jpeg") center/cover no-repeat; /* CHANGE TO YOUR IMAGE NAME */
+  background: url("images/splash.jpeg") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -381,23 +373,9 @@ nav a:hover { color: #b89b72; }
   padding: 40px;
 }
 
-.splash h1 {
-  font-size: 4rem;
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 20px;
-}
-
-.splash-date {
-  font-size: 1.6rem;
-  margin-bottom: 40px;
-  font-weight: 500;
-}
-
-.tap-prompt {
-  font-size: 1.4rem;
-  font-style: italic;
-  animation: pulse 2s infinite;
-}
+.splash h1 { font-size: 4rem; font-family: 'Playfair Display', serif; margin-bottom: 20px; }
+.splash-date { font-size: 1.6rem; margin-bottom: 40px; font-weight: 500; }
+.tap-prompt { font-size: 1.4rem; font-style: italic; animation: pulse 2s infinite; }
 
 @keyframes pulse {
   0% { opacity: 0.8; }
@@ -405,14 +383,38 @@ nav a:hover { color: #b89b72; }
   100% { opacity: 0.8; }
 }
 
-/* Hide main content until splash is dismissed */
-.main-content {
-  display: none;
-}
+.main-content { display: none; }
 
-/* Mobile touch feedback */
+/* MOBILE RESPONSIVE */
 @media (max-width: 768px) {
+  nav { padding: 16px 20px; }
+  .logo { font-size: 1.5rem; }
+  nav a { margin-left: 15px; font-size: 0.95rem; }
+
+  .hero-overlay { padding: 60px 40px; }
+  .hero h1 { font-size: 3.2rem; }
+  .hero span { font-size: 3.8rem; }
+
+  .countdown { gap: 20px; padding: 50px 20px; flex-wrap: wrap; }
+  .countdown span { font-size: 2.8rem; }
+
+  .card { margin: 80px 20px; padding: 40px; }
+
+  .gallery { padding: 80px 20px; }
+  .marquee-track img { height: 280px; margin: 0 12px; }
+  .marquee-container::before, .marquee-container::after { width: 80px; }
+
+  .champagne-list li { padding-left: 50px; font-size: 1.1rem; }
+  .champagne-list li::before { width: 32px; height: 32px; font-size: 1rem; }
+
+  .program-pages { gap: 35px; }
+  .program-page { border-radius: 20px; max-width: 95%; }
+  .download-btn { padding: 16px 32px; font-size: 1.1rem; }
+  .program-note { font-size: 1.2rem; }
+
   .splash h1 { font-size: 3rem; }
   .splash-date { font-size: 1.4rem; }
   .tap-prompt { font-size: 1.3rem; }
+
+  #music-btn { padding: 14px 24px; font-size: 0.95rem; }
 }
